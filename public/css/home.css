@@ -1,0 +1,151 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #7f00ff, #e100ff);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-container {
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+}
+
+.left-panel {
+    padding: 40px;
+    background-color: #6200ea;
+    color: white;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-panel .logo img {
+    max-width: 120px;
+    margin-bottom: 20px;
+}
+
+.left-panel h2 {
+    margin: 20px 0;
+    font-size: 28px;
+}
+
+.left-panel p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.left-panel form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-panel form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.left-panel form input[type="text"],
+.left-panel form input[type="password"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.left-panel form input::placeholder {
+    color: #ddd;
+}
+
+.left-panel form .options {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.left-panel form .options a {
+    color: white;
+    text-decoration: none;
+}
+
+.left-panel form button {
+    background-color: #03dac5;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.left-panel form button:hover {
+    background-color: #00bfa5;
+}
+
+.left-panel .admin-link {
+    color: white;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.right-panel {
+    padding: 60px;
+    width: 50%;
+    background-color: #f7f7f7;
+    color: #6200ea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.right-panel h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.right-panel p {
+    font-size: 18px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 20px;
+    }
+}

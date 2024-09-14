@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    color: #6a1b9a; /* Purple color */
+    margin-top: 20vh;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+input {
+    font-size: 1rem;
+    width: 300px;
+    padding: 6px 2px; 
+    margin: 10px 0;
+    border: 2px solid #6a1b9a; /* Purple border */
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #6a1b9a; /* Purple shadow on focus */
+}
+
+.sub {
+    background-color: #8e24aa; /* Darker purple */
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.sub:hover {
+    background-color: #7b1fa2; /* Slightly darker purple */
+}
+
+form {
+    text-align: center;
+    border: 5px solid #6a1b9a; /* Purple border */
+    padding: 20px;
+    background-color: #e1bee7; /* Light purple background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

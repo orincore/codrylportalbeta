@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+header h1 {
+    text-align: center;
+    color: #6200ea;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.requests {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.request {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.request p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.inline-form {
+    display: inline;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button.approve {
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button.approve:hover {
+    background-color: #45A049;
+}
+
+button.deny {
+    background-color: #f44336;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button.deny:hover {
+    background-color: #e53935;
+}
+
+p.no-requests {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}

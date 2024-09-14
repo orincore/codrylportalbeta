@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codryl Dashboard - Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/adminDashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/images/logo.PNG" alt="Codryl Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="/admin-dashboard">Dashboard</a>
+                <a href="/admin/create-user">Create User</a>
+                <a href="/admin/view-requests">View Requests</a>
+                <a href="/admin/manage-users">Manage Users</a>
+                <a href="/logout">Logout</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Admin Dashboard</h1>
+                <div class="user-profile">
+                    <span>Welcome, Admin</span>
+                    <img src="/images/admin-profile.jpg" alt="Admin Profile">
+                </div>
+            </header>
+            <section class="content">
+                <!-- Content dynamically loaded here -->
+                <h2>Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p>50</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Requests</h3>
+                        <p>10</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Approved Requests</h3>
+                        <p>30</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Denied Requests</h3>
+                        <p>5</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

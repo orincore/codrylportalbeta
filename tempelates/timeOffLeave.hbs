@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time off & Leave</title>
+    <link rel="stylesheet" href="/css/timeOffLeave.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Codryl Dashboard</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/time-off-leave">Time off & leave</a>
+            <a href="/pay">Pay</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/learn">Learn</a>
+        </div>
+        <div class="user-profile">
+            <span>Adarsh</span>
+            <img src="/images/profile-pic.jpg" alt="User Profile">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="time-off-leave">
+            <h1>Time off & leave</h1>
+
+            <div class="request-buttons">
+                <button onclick="window.location.href='/view-requests'">View all requests</button>
+                <button onclick="window.location.href='/request-time-off'">Request time off & leave</button>
+            </div>
+
+            <div class="requests">
+                <h2>Current and upcoming requests</h2>
+                <p>No current or upcoming requests.</p>
+                <a href="/view-requests">View all requests</a>
+            </div>
+
+            <div class="balances">
+                <h2>Time off balances</h2>
+                <div class="balance-item">
+                    <span>Sick Leave</span>
+                    <span>Current Balance: 9 d</span>
+                </div>
+                <div class="balance-item">
+                    <span>Planned Balance</span>
+                    <span>0 d</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

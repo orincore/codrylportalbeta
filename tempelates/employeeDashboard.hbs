@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Codryl Dashboard</div>
+        <div class="nav-links">
+            <a href="/employee-dashboard">Home</a> <!-- Updated Home link to direct to employee dashboard -->
+            <a href="/time-off-leave">Time off & leave</a>
+            <a href="/pay">Pay</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/learn">Learn</a>
+        </div>
+        <div class="user-profile">
+            <span>{{naming}}</span>
+            <img src="profile-pic.jpg" alt="User Profile">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="adarsh.jpg" alt="{{naming}}" class="profile-pic">
+            <h2>{{naming}}</h2>
+            <p>CS Associate, L2</p>
+            <p>CS Operations - VAR</p>
+            <a href="#">Manage personal information</a>
+        </div>
+
+        <div class="job-details">
+            <div class="supervisor">
+                <h3>Supervisor</h3>
+                <img src="supervisor-pic.jpg" alt="Supervisor" class="supervisor-pic">
+                <p>Deepak Shishodia</p>
+                <p>CAP Associate(DP) TOD</p>
+                <a href="#">Show leadership team</a>
+            </div>
+
+            <div class="job-info">
+                <h3>Job details</h3>
+                <p>Login: zsuradar</p>
+                <p>Employee ID: {{naming}}</p>
+                <p>Employment type: Full-Time (Class F)</p>
+                <a href="/job-details">Show more</a>
+            </div>
+        </div>
+
+        <div class="requests-summary">
+            <h3>Current and Upcoming Requests</h3>
+            {{#if upcomingRequests.length}}
+                <ul>
+                    {{#each upcomingRequests}}
+                        <li>
+                            <strong>Start Date:</strong> {{this.startDate}} 
+                            <strong>End Date:</strong> {{this.endDate}} 
+                            <strong>Status:</strong> {{this.status}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No current or upcoming requests.</p>
+            {{/if}}
+            <a href="/view-requests">View all requests</a>
+            <a href="/request-time-off">Request time off & leave</a>
+        </div>
+    </div>
+</body>
+</html>

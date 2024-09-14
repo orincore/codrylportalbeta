@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Time Off Requests</title>
+    <link rel="stylesheet" href="/css/viewRequests.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Time Off Requests</h1>
+        </header>
+
+        <div class="requests">
+            {{#if requests.length}}
+                {{#each requests}}
+                <div class="request">
+                    <p><strong>Employee ID:</strong> {{this.employeeId}}</p>
+                    <p><strong>Start Date:</strong> {{this.startDate}}</p>
+                    <p><strong>End Date:</strong> {{this.endDate}}</p>
+                    <p><strong>Reason:</strong> {{this.reason}}</p>
+                    <div class="actions">
+                        <form action="/admin/approve-request" method="post" class="inline-form">
+                            <input type="hidden" name="requestId" value="{{this._id}}">
+                            <button type="submit" class="approve">Approve</button>
+                        </form>
+                        <form action="/admin/deny-request" method="post" class="inline-form">
+                            <input type="hidden" name="requestId" value="{{this._id}}">
+                            <button type="submit" class="deny">Deny</button>
+                        </form>
+                    </div>
+                </div>
+                {{/each}}
+            {{else}}
+                <p>No pending requests.</p>
+            {{/if}}
+        </div>
+    </div>
+</body>
+</html>
