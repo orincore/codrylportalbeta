@@ -163,6 +163,38 @@ app.get('/job-details', (req, res) => {
     res.render('jobDetails');
 });
 
+// POST route for handling time off requests
+app.post('/request-time-off', ensureAuthenticated, async (req, res) => {
+    try {
+        const { startDate, endDate, reason } = req.body;
+
+        // Validate input
+        if (!startDate || !endDate || !reason) {
+            return res.status(400).send('All fields are required');
+        }
+
+        // Create a new time off request
+        const timeOffRequest = new TimeOffRequestCollection({
+            employeeId: req.session.user._id,  // Assuming the logged-in user is the employee
+            startDate,
+            endDate,
+            reason,
+            status: 'Pending', // Default status is pending
+            createdAt: new Date()
+        });
+
+        // Save the request to the database
+        await timeOffRequest.save();
+
+        // Redirect to the dashboard or display success message
+        res.redirect('/employee-dashboard');  // Or render a success page
+    } catch (error) {
+        console.error('Error requesting time off:', error);
+        res.status(500).send('An error occurred while requesting time off');
+    }
+});
+
+
 // Admin login logic
 app.post('/admin-login', async (req, res) => {
     try {
