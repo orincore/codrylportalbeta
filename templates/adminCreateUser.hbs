@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New User - Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/adminCreateUser.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="/images/logo.PNG" alt="Codryl Logo">
+            </div>
+            <div class="nav-links">
+                <a href="/admin-dashboard">Dashboard</a>
+                <a href="/admin/create-user" class="active">Create User</a>
+                <a href="/admin/view-requests">View Requests</a>
+                <a href="/admin/manage-users">Manage Users</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h1>Create New User</h1>
+                <div class="user-profile">
+                    <span>Admin Profile</span>
+                    <img src="/images/admin-profile.png" alt="Admin Profile">
+                </div>
+            </div>
+
+            <div class="content">
+                <h2>Enter Employee Details</h2>
+                <form action="/admin/create-user" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input id="firstName" type="text" name="firstName" placeholder="Enter First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middleName">Middle Name</label>
+                        <input id="middleName" type="text" name="middleName" placeholder="Enter Middle Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input id="lastName" type="text" name="lastName" placeholder="Enter Last Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input id="dob" type="date" name="dob" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="doj">Date of Joining</label>
+                        <input id="doj" type="date" name="doj" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" name="password" placeholder="Enter Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" type="tel" name="phone" placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" name="email" placeholder="Enter Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="aadhar">Aadhar Card Number</label>
+                        <input id="aadhar" type="text" name="aadhar" placeholder="XXXX-XXXX-XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pan">PAN Card Number</label>
+                        <input id="pan" type="text" name="pan" placeholder="ABCDE1234F" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nationality">Nationality</label>
+                        <select id="nationality" name="nationality" required>
+                            <option value="" disabled selected>Select Nationality</option>
+                            <option value="Indian">Indian</option>
+                            <option value="American">American</option>
+                            <option value="British">British</option>
+                            <option value="Canadian">Canadian</option>
+                            <option value="Australian">Australian</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="employee">Employee</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input id="designation" type="text" name="designation" placeholder="Enter Designation" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profilePic">Profile Picture</label>
+                        <input id="profilePic" type="file" name="profilePic" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

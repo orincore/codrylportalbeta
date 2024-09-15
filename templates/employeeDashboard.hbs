@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <style>
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Show the dropdown menu when the user hovers over the dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .profile-pic, .supervisor-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Codryl Dashboard</div>
+        <div class="nav-links">
+            <a href="/employee-dashboard">Home</a>
+            <a href="/time-off-leave">Time off & leave</a>
+            <a href="/pay">Pay</a>
+            <a href="/schedule">Schedule</a>
+            <a href="/learn">Learn</a>
+        </div>
+        <div class="dropdown user-profile">
+            <span>{{firstName}} {{lastName}}</span>
+            <img src="{{profilePic}}" alt="User Profile" class="profile-pic">
+            <div class="dropdown-content">
+                <a href="#">Account Info</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-card">
+            <img src="{{profilePic}}" alt="{{firstName}} {{lastName}}" class="profile-pic">
+            <h2>{{firstName}} {{lastName}}</h2>
+            <p>{{designation}}</p> <!-- Dynamic designation displayed here -->
+            <p>CS Operations - VAR</p> <!-- Dynamic department can be loaded here -->
+            <a href="#">Manage personal information</a>
+        </div>
+
+        <div class="job-details">
+            <div class="supervisor">
+                <h3>Supervisor</h3>
+                <img src="{{manager.profilePic}}" alt="Supervisor" class="supervisor-pic">
+                <p>{{manager.firstName}} {{manager.lastName}}</p> <!-- Dynamic Supervisor name -->
+                <p>{{manager.designation}}</p> <!-- Dynamic Supervisor designation -->
+                <a href="#">Show leadership team</a>
+            </div>
+
+            <div class="job-info">
+                <h3>Job details</h3>
+                <p>Alias: {{username}}</p> <!-- Generated username -->
+                <p>Employee ID: {{employeeId}}</p>
+                <p>Employment type: Full-Time (Class F)</p> <!-- Employment type can also be dynamically loaded -->
+                <a href="/job-details">Show more</a>
+            </div>
+        </div>
+
+        <div class="requests-summary">
+            <h3>Current and Upcoming Requests</h3>
+            {{#if upcomingRequests.length}}
+                <ul>
+                    {{#each upcomingRequests}}
+                        <li>
+                            <strong>Start Date:</strong> {{this.startDate}} 
+                            <strong>End Date:</strong> {{this.endDate}} 
+                            <strong>Status:</strong> {{this.status}}
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No current or upcoming requests.</p>
+            {{/if}}
+            <a href="/view-requests">View all requests</a>
+            <a href="/request-time-off">Request time off & leave</a>
+        </div>
+    </div>
+
+    <script>
+        let dropdownTimeout;
+
+        document.querySelector('.user-profile img').addEventListener('click', function() {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            clearTimeout(dropdownTimeout);
+            dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        });
+
+        document.addEventListener('click', function(event) {
+            const dropdownContent = document.querySelector('.dropdown-content');
+            const isClickInside = document.querySelector('.user-profile').contains(event.target);
+            if (!isClickInside) {
+                dropdownTimeout = setTimeout(() => {
+                    dropdownContent.style.display = 'none';
+                }, 2000); 
+            }
+        });
+    </script>
+</body>
+</html>

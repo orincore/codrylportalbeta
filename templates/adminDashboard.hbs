@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codryl Dashboard - Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/adminDashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/images/logo.PNG" alt="Codryl Logo" class="logo-img">
+            </div>
+            <nav class="nav-links">
+                <a href="/admin-dashboard">Dashboard</a>
+                <a href="/admin/create-user">Create User</a>
+                <a href="/admin/create-admin" id="createAdminButton">Create Admin/Manager</a>
+                <a href="/admin/view-requests">View Requests</a>
+                <a href="/admin/manage-users">Manage Users</a>
+                <a href="/logout">Logout</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Admin Dashboard</h1>
+               <div class="user-profile">
+    <span>Welcome, {{admin.firstName}}</span>
+    <img src="{{admin.profilePic}}" alt="Admin Profile" class="profile-img">
+</div>
+
+            </header>
+            <section class="content">
+                <h2>Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p>{{totalUsers}}</p> <!-- Total Users passed dynamically -->
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Requests</h3>
+                        <p>{{pendingRequests}}</p> <!-- Pending requests count -->
+                    </div>
+                    <div class="stat-card">
+                        <h3>Approved Requests</h3>
+                        <p>{{approvedRequests}}</p> <!-- Approved requests count -->
+                    </div>
+                    <div class="stat-card">
+                        <h3>Denied Requests</h3>
+                        <p>{{deniedRequests}}</p> <!-- Denied requests count -->
+                    </div>
+                </div>
+                <!-- Button for creating Admin/Manager -->
+                <button id="createAdminButton" class="create-admin-btn">Create Admin/Manager</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Admin/Manager creation form -->
+    <div id="createAdminModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Admin/Manager Credentials</h2>
+            <form id="createAdminForm" action="/admin/create-admin" method="POST" enctype="multipart/form-data">
+                <!-- Form fields similar to employee creation -->
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                <label for="middleName">Middle Name:</label>
+                <input type="text" id="middleName" name="middleName">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <label for="doj">Date of Joining:</label>
+                <input type="date" id="doj" name="doj" required>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="aadhar">Aadhar:</label>
+                <input type="text" id="aadhar" name="aadhar" required>
+                <label for="pan">PAN:</label>
+                <input type="text" id="pan" name="pan" required>
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality" required>
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name="designation" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <label for="profilePic">Profile Picture:</label>
+                <input type="file" id="profilePic" name="profilePic" accept="image/*">
+                <button type="submit" class="create-admin-btn">Create Admin/Manager</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal and button
+        var modal = document.getElementById("createAdminModal");
+        var btn = document.getElementById("createAdminButton");
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

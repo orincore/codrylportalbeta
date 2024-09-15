@@ -1,4 +1,4 @@
-/* styles.css */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +6,7 @@ body {
     background-color: #f2f2f2;
 }
 
+/* Header styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -19,6 +20,11 @@ body {
     font-size: 24px;
 }
 
+.header .nav-links {
+    display: flex;
+    align-items: center;
+}
+
 .header .nav-links a {
     color: white;
     margin-right: 20px;
@@ -29,9 +35,12 @@ body {
     text-decoration: underline;
 }
 
+/* User profile and dropdown styles */
 .header .user-profile {
+    position: relative;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .header .user-profile span {
@@ -44,6 +53,31 @@ body {
     border-radius: 50%;
 }
 
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0; /* Align to the right edge of the profile picture */
+    top: 50px; /* Adjust the top value to align properly below the profile picture */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Container styles */
 .container {
     display: flex;
     justify-content: center;
@@ -91,6 +125,7 @@ body {
     text-decoration: underline;
 }
 
+/* Job details and supervisor section styles */
 .job-details {
     display: flex;
     flex-direction: column;
@@ -124,4 +159,21 @@ body {
 
 .supervisor a:hover, .job-info a:hover {
     text-decoration: underline;
+}
+
+/* Logout button styles */
+.logout-button {
+    background-color: #f44336; /* Red */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red */
 }

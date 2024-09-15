@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Time Off</title>
+    <link rel="stylesheet" href="/css/requestTimeOff.css">
+</head>
+<body>
+    <div class="container">
+        <div class="request-container">
+            <div class="left-panel">
+                <div class="logo">
+                    <img src="/images/logo.PNG" alt="Codryl Logo">
+                </div>
+                <h2>Request Time Off</h2>
+                <p>Submit your leave request</p>
+                <form action="/request-time-off" method="POST">
+                    <input type="date" name="startDate" placeholder="Start Date" required>
+                    <input type="date" name="endDate" placeholder="End Date" required>
+                    <textarea name="reason" placeholder="Reason for Leave" required></textarea>
+                    <button type="submit">Submit Request</button>
+                </form>
+                <a href="/employee-dashboard" class="back-link">Back to Dashboard</a>
+            </div>
+            <div class="right-panel">
+                <h2>Manage Your Time Off</h2>
+                <p>Keep track of your time off requests and manage them effectively.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

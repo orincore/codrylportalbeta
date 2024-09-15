@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Create User Account</title>
+    <link rel="stylesheet" href="/css/adminLogin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="admin-container">
+            <div class="form-panel">
+                <div class="logo">
+                    <img src="/images/logo.png" alt="Codryl Logo">
+                </div>
+                <h1>Create User Account</h1>
+                <form action="/admin/create-user" method="post">
+                    <input placeholder="Employee ID" name="employeeId" type="number" required>
+                    <input placeholder="Name" name="name" type="text" required>
+                    <input placeholder="Password" name="password" type="password" required>
+                    <button type="submit">Create User</button>
+                </form>
+                <a href="/admin-dashboard" class="back-link">Go back to dashboard</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

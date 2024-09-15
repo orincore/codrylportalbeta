@@ -1,0 +1,16 @@
+<h1>Manager Dashboard</h1>
+<h2>Your Team</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    {{#each employees}}
+    <tr>
+        <td>{{this.firstName}} {{this.lastName}}</td>
+        <td>
+            <a href="/manager/edit-user/{{this._id}}">Edit</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

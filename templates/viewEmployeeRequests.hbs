@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Time Off Requests</title>
+    <link rel="stylesheet" href="/css/viewEmployeeRequests.css">
+</head>
+<body>
+    <h1>Your Time Off Requests</h1>
+
+    {{#if requests.length}}
+        <ul>
+            {{#each requests}}
+                <li>
+                    <strong>Start Date:</strong> {{this.startDate}} 
+                    <strong>End Date:</strong> {{this.endDate}} 
+                    <strong>Reason:</strong> {{this.reason}} 
+                    <strong>Status:</strong> {{this.status}}
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p>No time-off requests found.</p>
+    {{/if}}
+
+    <a href="/employee-dashboard">Back to Dashboard</a>
+</body>
+</html>
