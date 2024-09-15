@@ -147,6 +147,22 @@ app.get('/admin-login', (req, res) => {
     res.render('adminLogin');
 });
 
+app.get('/time-off-leave', (req, res) => {
+    res.render('timeOffRequests');
+});
+
+app.get('/admin/view-requests', (req, res) => {
+    res.render('viewRequests');
+});
+
+app.get('/request-time-off', (req, res) => {
+    res.render('requestTimeOff');
+});
+
+app.get('/job-details', (req, res) => {
+    res.render('jobDetails');
+});
+
 // Admin login logic
 app.post('/admin-login', async (req, res) => {
     try {
